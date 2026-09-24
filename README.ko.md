@@ -23,7 +23,7 @@
 **판본**
 - `urdf/`, `meshes/`, `step/`, `usd/`, `params/`는 **2026-08-23 CAD 추출본**이다. 시뮬레이션과 학습에 쓴 판본이다.
 - `cad/inventor/`는 **2026-09-21 최신 설계**이고, 몸 커버가 추가돼 있다.
-- 몸 커버는 시뮬 모델에 포함되지 않았다. CAD 질량은 속이 꽉 찬 밀도 기준 43.4 g이고, 출력물은 이보다 가볍다([docs/body_cover.md](docs/body_cover.md)).
+- 몸 커버는 시뮬 모델에 포함되지 않았다. PLA로 출력하며, 속이 꽉 차면 약 50.8 g이고 채움률에 따라 더 가볍다([docs/body_cover.md](docs/body_cover.md)).
 
 **불러오기**
 - Isaac에서는 `usd/micro_dog.usda`를 그대로 쓰면 된다.

@@ -57,8 +57,8 @@ policy/                    trained walking policy (RSL-RL checkpoint) and its de
   version used for all simulation and training.
 - `cad/inventor/` is the **current design (2026-09-21)**. It adds the body cover and small revisions
   to the foot and the Pi mount.
-- The body cover is not in the simulation model. Its CAD mass is 43.4 g at solid density; a printed
-  cover weighs less (see `docs/body_cover.md`).
+- The body cover is not in the simulation model. It is printed in PLA: about 50.8 g if
+  solid, less with infill (see `docs/body_cover.md`).
 
 ---
 
