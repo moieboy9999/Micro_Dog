@@ -32,7 +32,7 @@ This repository contains the complete mechanical design and the simulation descr
 | Standing height | 0.170 m nominal |
 | Compute | Raspberry Pi Zero 2 W with a Pollen Robotics RPI Robot HAT |
 | Power | 2-cell lithium pack, BMS and charging module |
-| Material | PLA (3D printed) for all printed parts: frame, legs, body cover; TPU-95A feet; knee links machined aluminium in the author's build (PLA links are strong enough) |
+| Material | PLA (3D printed) for all printed parts: frame, legs, body cover; TPU-95A feet; knee pushrod links machined from 6061 aluminium in the author's build (PLA links are strong enough) |
 
 ---
 

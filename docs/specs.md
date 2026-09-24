@@ -39,7 +39,7 @@ intersect. The only `hip_joint → thigh_joint` offset is therefore the 39.8 mm 
 |---|---|---|
 | `base` | 455.6 g | frame 220.6 g; system 235.0 g (2 batteries, Pi + HAT, BMS, charger, fan, switch); 4 roll servos |
 | `*_hip` ×4 | 33.6 g | roll horn frame, pitch servo, bearing |
-| `*_thigh` ×4 | 66.8 g | thigh shell 22.0, XL330 22.0, large bearing 2.0, crank 2.6, pushrod 12.2, **measured makeup 5.9** |
+| `*_thigh` ×4 | 66.8 g | thigh shell 22.0, XL330 22.0, large bearing 2.0, crank 2.6, pushrod 12.2 (6061 aluminium; the CAD models it at about 3.0 g/cm³, i.e. metal), **measured makeup 5.9** |
 | `*_calf` ×4 | 23.8 g | shank + foot assembly minus the foot tip, **measured makeup 5.9** |
 | `*_foot` ×4 | 2.0 g | TPU-95A foot tip |
 | **Total** | **960.0 g** | CAD 912.6 g + makeup 47.4 g |
