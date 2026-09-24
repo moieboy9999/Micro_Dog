@@ -9,10 +9,10 @@ part of the simulation model.**
 | Material in CAD | ABS (1.06 g/cm³) |
 | Volume | 40.9 cm³ |
 | CAD mass (solid ABS density) | 43.4 g |
-| Solid mass if printed in PLA (1.24 g/cm³) | ~50.8 g |
+| Solid mass in PLA (1.24 g/cm³), the material actually used | ~50.8 g |
 
-- **How much it weighs is not settled.** The CAD value above assumes a fully solid part. A printed
-  cover weighs less, depending on infill and wall settings, so weigh your own print.
+- **How much it weighs is not settled.** The cover is printed in PLA. A fully solid PLA cover
+  would weigh about 50.8 g; with infill it weighs less, so weigh your own print.
 - **The URDF total of 0.960 kg was weighed before the cover was fitted.** A robot with the cover
   is heavier by the cover's printed mass.
 - **To include the cover in simulation,** add its measured mass to the `base` link. It mounts on
