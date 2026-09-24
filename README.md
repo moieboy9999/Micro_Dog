@@ -14,7 +14,7 @@ This repository contains the complete mechanical design and the simulation descr
 - the scripts that regenerate the URDF from the CAD data;
 - the trained walking policy that runs on the robot (`policy/`).
 
-[한국어 요약](README.ko.md)
+[한국어 요약](README.ko.md) · [Notes from the creator](A%20small%20note%20from%20the%20creator.md)
 
 > **Bill of materials: coming soon.** A full BOM (electronics, bearings, fasteners, printed parts
 > with quantities and filament estimate) will be added in a later update.
@@ -32,7 +32,7 @@ This repository contains the complete mechanical design and the simulation descr
 | Standing height | 0.170 m nominal |
 | Compute | Raspberry Pi Zero 2 W with a Pollen Robotics RPI Robot HAT |
 | Power | 2-cell lithium pack, BMS and charging module |
-| Material | ABS (3D printed) |
+| Material | ABS (3D printed) frame and legs; TPU-95A feet; knee links machined aluminium in the author's build (3D-printed links are strong enough) |
 
 ---
 

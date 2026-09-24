@@ -25,7 +25,7 @@ The `base` origin is the centre of the four hip-roll axes, the same convention a
 | Roll axis → leg plane (lateral offset) | 39.8 mm |
 | Thigh (pitch axis → knee axis) | 95.0 mm |
 | Shank (knee axis → foot pad centre) | 97.0 mm |
-| Foot pad radius | 13.0 mm |
+| Foot radius (TPU-95A foot) | 13.0 mm |
 | Knee axis → ground contact | 110.0 mm |
 | Track width (left–right foot spacing) | 137.6 mm |
 | Maximum leg extension | 205.0 mm |
@@ -40,8 +40,8 @@ intersect. The only `hip_joint → thigh_joint` offset is therefore the 39.8 mm 
 | `base` | 455.6 g | frame 220.6 g; system 235.0 g (2 batteries, Pi + HAT, BMS, charger, fan, switch); 4 roll servos |
 | `*_hip` ×4 | 33.6 g | roll horn frame, pitch servo, bearing |
 | `*_thigh` ×4 | 66.8 g | thigh shell 22.0, XL330 22.0, large bearing 2.0, crank 2.6, pushrod 12.2, **measured makeup 5.9** |
-| `*_calf` ×4 | 23.8 g | shank + foot assembly minus rubber pad, **measured makeup 5.9** |
-| `*_foot` ×4 | 2.0 g | rubber pad |
+| `*_calf` ×4 | 23.8 g | shank + foot assembly minus the foot tip, **measured makeup 5.9** |
+| `*_foot` ×4 | 2.0 g | TPU-95A foot tip |
 | **Total** | **960.0 g** | CAD 912.6 g + makeup 47.4 g |
 
 **Measured makeup.** The assembled robot weighs 960 g against a CAD total of 912.6 g.
