@@ -1,0 +1,1032 @@
+meta:
+  name: micro_dog
+  description: Micro Dog quadruped, self-modelled parts inspired by Rhoban Microban (Dynamixel XL330-M288-T x12)
+  source_cad: 전체.iam (Autodesk Inventor 2027)
+  units: SI (m, kg, rad)
+  frame: 'ROS/URDF convention: +X forward, +Y left, +Z up'
+  zero_pose: CAD assembly pose = every servo at its centre (2048 ticks / 180 deg);
+    thigh points straight back, shank points straight down
+  knee_linkage: parallelogram four-bar (crank 19.0 mm, pushrod 95.0 mm) -> exact 1:1
+    coupling, modelled as a single revolute joint like Go2
+links:
+  base:
+    mass: 0.45564344642235466
+    com:
+    - -0.017858490139421552
+    - -0.0006013191939759111
+    - 0.00603831619631956
+    inertia:
+      ixx: 0.00034771270898528294
+      iyy: 0.0011755025604550924
+      izz: 0.0014109362061909994
+      ixy: 6.210941413952424e-06
+      ixz: -2.8577857534237412e-06
+      iyz: 3.133226528389969e-06
+    collision:
+      type: box
+      size:
+      - 0.2470000000000021
+      - 0.09000000000000377
+      - 0.048000000000005934
+      origin:
+      - -4.163336342344337e-17
+      - -1.474514954580286e-15
+      - 0.0075000000000032645
+    mesh: base
+  FL_hip:
+    mass: 0.03357186900913004
+    com:
+    - -0.006098251160228187
+    - -0.0009434663575089708
+    - 2.960179083881798e-06
+    inertia:
+      ixx: 3.4319351277148142e-06
+      iyy: 6.9371124064141436e-06
+      izz: 7.247322879037165e-06
+      ixy: -4.015909781182927e-08
+      ixz: 7.263956409587991e-10
+      iyz: -5.948647370132676e-10
+    collision:
+      type: box
+      size:
+      - 0.04200000000000001
+      - 0.0300025912560907
+      - 0.027999999999942102
+      origin:
+      - -0.007499999999998996
+      - -0.0004987043719337511
+      - 7.476658181460039e-16
+    mesh: hip_fl
+  FL_thigh:
+    mass: 0.06675591643813134
+    com:
+    - -0.022583807797103877
+    - -0.004397679911801689
+    - 0.01271478539548385
+    inertia:
+      ixx: 1.560898113660963e-05
+      iyy: 8.848675871202484e-05
+      izz: 8.702691118874188e-05
+      ixy: 1.0984716940846815e-05
+      ixz: 4.3227431842676345e-06
+      iyz: -2.734328974324221e-06
+    collision:
+      type: box
+      size:
+      - 0.11950741958110211
+      - 0.041251781166547
+      - 0.04721888371739118
+      origin:
+      - -0.045746290209448065
+      - -0.006675890583266507
+      - 0.01158786630379699
+    mesh: thigh_left
+  FL_foot:
+    mass: 0.002
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 9.954166666666666e-08
+      iyy: 1.6900000000000002e-07
+      izz: 9.954166666666666e-08
+      ixy: 0.0
+      ixz: 0.0
+      iyz: 0.0
+    collision:
+      type: sphere
+      radius: 0.013000000000000001
+      origin:
+      - 0.0
+      - 0.0
+      - 0.0
+    mesh: null
+  FL_calf:
+    mass: 0.023761352947149948
+    com:
+    - 0.007569278359323253
+    - 0.00036662654587951596
+    - -0.03677828311605704
+    inertia:
+      ixx: 1.9430988156264512e-05
+      iyy: 2.0373706757122745e-05
+      izz: 1.8307855267633837e-06
+      ixy: 1.0332010645914954e-07
+      ixz: 2.448924824290345e-06
+      iyz: -1.109478469239335e-06
+    collision:
+      type: box
+      size:
+      - 0.035558252616419
+      - 0.020500000000001004
+      - 0.1123646502064094
+      origin:
+      - 0.004690363911645293
+      - 0.003575000000007496
+      - -0.027817674896795295
+    mesh: calf_left
+  FR_hip:
+    mass: 0.03357186900913004
+    com:
+    - -0.006098251160228365
+    - 0.0009434663575083979
+    - -2.96017908234969e-06
+    inertia:
+      ixx: 3.431935127715605e-06
+      iyy: 6.93711240641378e-06
+      izz: 7.247322879036529e-06
+      ixy: 4.0159097811783794e-08
+      ixz: -7.263956409587991e-10
+      iyz: -5.9486473725201e-10
+    collision:
+      type: box
+      size:
+      - 0.04200000000000001
+      - 0.030002591256090415
+      - 0.027999999999941794
+      origin:
+      - -0.007499999999998996
+      - 0.0004987043719328942
+      - 7.016956460326185e-16
+    mesh: hip_fr
+  FR_thigh:
+    mass: 0.06675591643813134
+    com:
+    - -0.022587076797228
+    - 0.004397679613956977
+    - 0.012714784983378635
+    inertia:
+      ixx: 1.5608981347769187e-05
+      iyy: 8.847690769703351e-05
+      izz: 8.701705925067446e-05
+      ixy: -1.0984638386016745e-05
+      ixz: 4.322893166046557e-06
+      iyz: 2.734328900577396e-06
+    collision:
+      type: box
+      size:
+      - 0.1195074195811013
+      - 0.041251781166547194
+      - 0.047218883717391386
+      origin:
+      - -0.045746290209448655
+      - 0.006675890583265992
+      - 0.01158786630379629
+    mesh: thigh_right
+  FR_foot:
+    mass: 0.002
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 9.954166666666666e-08
+      iyy: 1.6900000000000002e-07
+      izz: 9.954166666666666e-08
+      ixy: 0.0
+      ixz: 0.0
+      iyz: 0.0
+    collision:
+      type: sphere
+      radius: 0.013000000000000001
+      origin:
+      - 0.0
+      - 0.0
+      - 0.0
+    mesh: null
+  FR_calf:
+    mass: 0.023761352947149948
+    com:
+    - 0.007569278359317835
+    - -0.0007992955680408365
+    - -0.03677828311606634
+    inertia:
+      ixx: 1.9420543661692983e-05
+      iyy: 2.0373706757076653e-05
+      izz: 1.820341034419423e-06
+      ixy: -1.1711717982636136e-07
+      ixz: 2.4489248218999434e-06
+      iyz: 4.138220363354853e-07
+    collision:
+      type: box
+      size:
+      - 0.03555825261641881
+      - 0.020500000000000098
+      - 0.11285230763924889
+      origin:
+      - 0.004690363911640394
+      - -0.0035750000000068505
+      - -0.027573846180375547
+    mesh: calf_right
+  RL_hip:
+    mass: 0.03357186900913004
+    com:
+    - 0.006098251160228907
+    - -0.0009434663575100367
+    - -2.9601790826561115e-06
+    inertia:
+      ixx: 3.4319351277142234e-06
+      iyy: 6.937112406414428e-06
+      izz: 7.247322879036437e-06
+      ixy: 4.0159097811692844e-08
+      ixz: 7.263956409417461e-10
+      iyz: 5.948647372065353e-10
+    collision:
+      type: box
+      size:
+      - 0.042000000000000995
+      - 0.03000259125609201
+      - 0.027999999999942904
+      origin:
+      - 0.007499999999999898
+      - -0.0004987043719351016
+      - 3.478120569333498e-16
+    mesh: hip_rl
+  RL_thigh:
+    mass: 0.06675591643813134
+    com:
+    - -0.0225838077971067
+    - -0.004397679911805526
+    - 0.012714785395484245
+    inertia:
+      ixx: 1.5608981136606964e-05
+      iyy: 8.848675871202603e-05
+      izz: 8.702691118873902e-05
+      ixy: 1.098471694083957e-05
+      ixz: 4.322743184267516e-06
+      iyz: -2.734328974323142e-06
+    collision:
+      type: box
+      size:
+      - 0.11950741958110299
+      - 0.04125178116655089
+      - 0.04721888371739248
+      origin:
+      - -0.0457462902094505
+      - -0.006675890583270459
+      - 0.01158786630379744
+    mesh: thigh_left
+  RL_foot:
+    mass: 0.002
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 9.954166666666666e-08
+      iyy: 1.6900000000000002e-07
+      izz: 9.954166666666666e-08
+      ixy: 0.0
+      ixz: 0.0
+      iyz: 0.0
+    collision:
+      type: sphere
+      radius: 0.013000000000000001
+      origin:
+      - 0.0
+      - 0.0
+      - 0.0
+    mesh: null
+  RL_calf:
+    mass: 0.023761352947149948
+    com:
+    - 0.007569278359317551
+    - 0.00036662654587523493
+    - -0.03677828311605733
+    inertia:
+      ixx: 1.9430988156264797e-05
+      iyy: 2.0373706757122986e-05
+      izz: 1.8307855267635393e-06
+      ixy: 1.0332010645897595e-07
+      ixz: 2.4489248242882498e-06
+      iyz: -1.1094784692390146e-06
+    collision:
+      type: box
+      size:
+      - 0.03555825261642
+      - 0.020500000000001004
+      - 0.11236465020641044
+      origin:
+      - 0.004690363911638009
+      - 0.003575000000001491
+      - -0.02781767489679477
+    mesh: calf_left
+  RR_hip:
+    mass: 0.03357186900913004
+    com:
+    - 0.006098251160229147
+    - 0.0009434663575090375
+    - 2.960179083411063e-06
+    inertia:
+      ixx: 3.4319351277166163e-06
+      iyy: 6.9371124064132804e-06
+      izz: 7.247322879036483e-06
+      ixy: -4.0159097811820746e-08
+      ixz: -7.263956409474305e-10
+      iyz: 5.948647372832738e-10
+    collision:
+      type: box
+      size:
+      - 0.0420000000000006
+      - 0.03000259125609119
+      - 0.027999999999942203
+      origin:
+      - 0.007500000000000197
+      - 0.0004987043719338023
+      - 3.9898639947466563e-16
+    mesh: hip_rr
+  RR_thigh:
+    mass: 0.06675591643813134
+    com:
+    - -0.02258707679722838
+    - 0.004397679613958041
+    - 0.0127147849833798
+    inertia:
+      ixx: 1.5608981347769353e-05
+      iyy: 8.847690769703369e-05
+      izz: 8.701705925067427e-05
+      ixy: -1.098463838601663e-05
+      ixz: 4.322893166048655e-06
+      iyz: 2.734328900577704e-06
+    collision:
+      type: box
+      size:
+      - 0.119507419581102
+      - 0.04125178116654743
+      - 0.04721888371739439
+      origin:
+      - -0.04574629020944901
+      - 0.006675890583267314
+      - 0.011587866303798298
+    mesh: thigh_right
+  RR_foot:
+    mass: 0.002
+    com:
+    - 0.0
+    - 0.0
+    - 0.0
+    inertia:
+      ixx: 9.954166666666666e-08
+      iyy: 1.6900000000000002e-07
+      izz: 9.954166666666666e-08
+      ixy: 0.0
+      ixz: 0.0
+      iyz: 0.0
+    collision:
+      type: sphere
+      radius: 0.013000000000000001
+      origin:
+      - 0.0
+      - 0.0
+      - 0.0
+    mesh: null
+  RR_calf:
+    mass: 0.023761352947149948
+    com:
+    - 0.007569278359314442
+    - -0.0007992955680408765
+    - -0.03677828311606315
+    inertia:
+      ixx: 1.942054366169157e-05
+      iyy: 2.0373706757076667e-05
+      izz: 1.8203410344197704e-06
+      ixy: -1.171171798266888e-07
+      ixz: 2.4489248218980143e-06
+      iyz: 4.1382203633502663e-07
+    collision:
+      type: box
+      size:
+      - 0.03555825261642601
+      - 0.0205000000000001
+      - 0.11285230763925265
+      origin:
+      - 0.004690363911637005
+      - -0.0035750000000057515
+      - -0.027573846180373666
+    mesh: calf_right
+joints:
+  FL_hip_joint:
+    parent: base
+    child: FL_hip
+    origin:
+    - 0.10300000000000001
+    - 0.029000000000000005
+    - 0.0
+    axis:
+    - 1.0
+    - 0.0
+    - 0.0
+  FL_thigh_joint:
+    parent: FL_hip
+    child: FL_thigh
+    origin:
+    - 0.0
+    - 0.0398
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  FL_calf_joint:
+    parent: FL_thigh
+    child: FL_calf
+    origin:
+    - -0.095
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  FL_foot_joint:
+    parent: FL_calf
+    child: FL_foot
+    origin:
+    - 0.0
+    - 0.0
+    - -0.09699999999999999
+    axis: null
+    type: fixed
+  FR_hip_joint:
+    parent: base
+    child: FR_hip
+    origin:
+    - 0.10300000000000001
+    - -0.028999999999999998
+    - 0.0
+    axis:
+    - 1.0
+    - 0.0
+    - 0.0
+  FR_thigh_joint:
+    parent: FR_hip
+    child: FR_thigh
+    origin:
+    - 0.0
+    - -0.0398
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  FR_calf_joint:
+    parent: FR_thigh
+    child: FR_calf
+    origin:
+    - -0.095
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  FR_foot_joint:
+    parent: FR_calf
+    child: FR_foot
+    origin:
+    - 0.0
+    - 0.0
+    - -0.09699999999999999
+    axis: null
+    type: fixed
+  RL_hip_joint:
+    parent: base
+    child: RL_hip
+    origin:
+    - -0.10300000000000001
+    - 0.029000000000000005
+    - 0.0
+    axis:
+    - 1.0
+    - 0.0
+    - 0.0
+  RL_thigh_joint:
+    parent: RL_hip
+    child: RL_thigh
+    origin:
+    - 0.0
+    - 0.0398
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  RL_calf_joint:
+    parent: RL_thigh
+    child: RL_calf
+    origin:
+    - -0.095
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  RL_foot_joint:
+    parent: RL_calf
+    child: RL_foot
+    origin:
+    - 0.0
+    - 0.0
+    - -0.09699999999999999
+    axis: null
+    type: fixed
+  RR_hip_joint:
+    parent: base
+    child: RR_hip
+    origin:
+    - -0.10300000000000001
+    - -0.028999999999999998
+    - 0.0
+    axis:
+    - 1.0
+    - 0.0
+    - 0.0
+  RR_thigh_joint:
+    parent: RR_hip
+    child: RR_thigh
+    origin:
+    - 0.0
+    - -0.0398
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  RR_calf_joint:
+    parent: RR_thigh
+    child: RR_calf
+    origin:
+    - -0.095
+    - 0.0
+    - 0.0
+    axis:
+    - 0.0
+    - 1.0
+    - 0.0
+  RR_foot_joint:
+    parent: RR_calf
+    child: RR_foot
+    origin:
+    - 0.0
+    - 0.0
+    - -0.09699999999999999
+    axis: null
+    type: fixed
+kinematics:
+  thigh_length: 0.095
+  shank_length: 0.09699999999999999
+  foot_radius: 0.013000000000000001
+  knee_to_ground_at_zero: 0.11
+  hip_spacing_x: 0.20600000000000002
+  hip_spacing_y: 0.05800000000000001
+  lateral_offset: 0.0398
+  nominal_track_width: 0.13760000000000003
+  max_leg_extension: 0.20500000000000002
+  total_mass: 0.96
+  cad_mass: 0.9126031787970534
+  measured_mass: 0.96
+  mass_makeup_per_link: 0.005924602650368316
+  com_x_cad_at_stand: -0.010609523580807982
+  com_x_measured_at_stand: -0.019466999999999998
+  com_shift_applied: -0.008857476419192016
+  measured_front_fraction: 0.4055
+  com_note: front/rear weight split measured on a scale at the 140 mm stand pose (400/580
+    g and 405/600 g); the base link centre of mass is offset so the model reproduces
+    it
+  mass_makeup_note: the weighed robot is 47.4 g heavier than the CAD; the difference
+    is wiring/fasteners and is added evenly to the four thigh and four calf links,
+    inertia scaled with mass
+  legs:
+    FL:
+      hip_origin_in_base:
+      - 0.10300000000000001
+      - 0.029000000000000005
+      - 0.0
+      lateral_offset: 0.0398
+    FR:
+      hip_origin_in_base:
+      - 0.10300000000000001
+      - -0.028999999999999998
+      - 0.0
+      lateral_offset: -0.0398
+    RL:
+      hip_origin_in_base:
+      - -0.10300000000000001
+      - 0.029000000000000005
+      - 0.0
+      lateral_offset: 0.0398
+    RR:
+      hip_origin_in_base:
+      - -0.10300000000000001
+      - -0.028999999999999998
+      - 0.0
+      lateral_offset: -0.0398
+limits:
+  hip:
+    lower: -0.8605632220038447
+    upper: 0.8605632220038447
+    left:
+      lower: -1.55545651891604
+      upper: 0.8605632220038447
+    right:
+      lower: -0.8605632220038447
+      upper: 1.55545651891604
+    source: measured 2026-09-02; ID31 left inward endpoint and ID41 right outward
+      endpoint, mirrored by side
+  thigh:
+    lower: -1.5278448647340985
+    upper: 0.859029241215959
+    source: measured 2026-09-02; ID42 lower endpoint, ID32 upper endpoint after direction
+      signs
+  calf:
+    lower: -1.101398206
+    upper: 1.20724288
+    source: measured 2026-09-02; ID43 fully folded, ID33 fully extended
+command_limits:
+  hip:
+    lower: -0.7732967594041282
+    upper: 0.7732967594041282
+    left:
+      lower: -1.4681900563163237
+      upper: 0.7732967594041282
+    right:
+      lower: -0.7732967594041282
+      upper: 1.4681900563163237
+    safety_margin_rad: 0.08726646259971647
+    safety_margin_deg: 5.0
+    source: measured mirrored hip-roll endpoints, inset 5 degrees at both ends
+  thigh:
+    lower: -1.4405784021343822
+    upper: 0.7717627786162425
+    safety_margin_rad: 0.08726646259971647
+    safety_margin_deg: 5.0
+    source: measured hip-pitch travel endpoints, inset 5 degrees at both ends
+  calf:
+    lower: -1.0141317434002837
+    upper: 1.1199764174002835
+    safety_margin_rad: 0.08726646259971647
+    safety_margin_deg: 5.0
+    source: measured calf travel endpoints, inset 5 degrees at both ends
+actuator:
+  model: Dynamixel XL330-M288-T
+  source: Rhoban BAM, bam/params/xl330/m6.json (load-dependent friction)
+  bam_model: m6
+  kt: 0.36601349688984386
+  R: 2.8113923539223227
+  error_gain: 0.0028773775022263564
+  friction_base: 0.004771183165566
+  friction_viscous: 0.005359668274599504
+  supply_voltage: 7.4
+  firmware_kp: 200
+  firmware_current_limit: 1.75
+  stiffness: 0.5544140148169708
+  damping: 0.019155733865068244
+  damping_backemf: 0.047651079266338915
+  damping_scale: 0.402
+  saturation_effort: 0.9634015946604082
+  effort_limit: 0.6405236195572268
+  velocity_limit: 20.217833667011245
+  armature: 0.0018077432831600838
+  friction: 0.004771183165566
+  dynamic_friction: 0.004771183165566
+  viscous_friction: 0.005359668274599504
+  load_friction_motor: 0.2667860954283698
+  friction_stribeck: 0.004676345799486616
+  load_friction_external_stribeck: 0.08077928978935671
+  load_friction_external_quad: 0.004902565732332559
+  dtheta_stribeck: 2.890372094130307
+  alpha: 8.683259907618984
+  net_effort_at_current_limit: 0.4211747207045922
+  datasheet_stall_torque_5v: 0.52
+  datasheet_no_load_speed_5v: 8.48
+  note: the gearbox eats load_friction_motor (27%) of whatever the motor produces,
+    so the torque that reaches the joint at the current limit is net_effort_at_current_limit,
+    not effort_limit. stiffness, stall torque, and no-load speed scale with supply_voltage;
+    the current-limited effort does not. stiffness also scales with firmware_kp. Rhoban Microban
+    uses kp=125 for RL walking on a biped; this quadruped carries static load on all
+    four legs, where kp=125 would let the knees sag ~36 deg. Hardware load sweeps
+    first selected 600; firmware_kp is now 200, which is what the robot runs and what
+    the exported hardware map carries.
+poses:
+  zero:
+    note: CAD assembly pose, every servo at 2048 ticks
+    hip: 0.0
+    thigh: 0.0
+    calf: 0.0
+    base_height: 0.11
+  stand:
+    note: symmetric crouch, feet directly under the hips
+    hip: 0.0
+    thigh: -0.95
+    calf: 0.344
+    base_height: 0.17
+    fk_check_foot_in_base:
+    - 0.103
+    - 0.0688
+    - -0.157
+  stand_balanced:
+    note: legs swept back until the support midpoint sits on the centre of mass, so
+      the front and rear pairs carry the same load; this is the pose the gravity compensation
+      and the RL default are built on
+    hip: 0.0
+    thigh: -0.838
+    calf: 0.3658
+    base_height: 0.17
+    foot_offset_from_hip: -0.01944
+    load_front_fraction: 0.5
+  stand_balanced_155:
+    note: task-local locomotion crouch; support midpoint centred on the measured centre
+      of mass at 155 mm base height
+    hip: 0.0
+    thigh: -0.692
+    calf: 0.1167
+    base_height: 0.155
+    foot_offset_from_hip: -0.02037
+    load_front_fraction: 0.5
+  stand_compensated:
+    note: joint targets whose steady state under gravity is the stand_balanced pose;
+      solved by scripts/tune_stand_pose.py against the BAM actuator model
+    target_pose: stand_balanced
+    hip: 0.0084
+    thigh: -0.8149
+    calf: 0.5002
+    base_height: 0.1679
+    target_base_height: 0.17
+  stand_compensated_155:
+    note: task-local joint targets that settle into stand_balanced_155 under gravity;
+      solved by scripts/tune_stand_pose.py against the current kp200 BAM actuator
+      model
+    target_pose: stand_balanced_155
+    hip: -0.0025
+    thigh: -0.794
+    calf: 0.4376
+    base_height: 0.1547
+    target_base_height: 0.155
+hardware:
+  protocol: Dynamixel Protocol 2.0
+  tick_per_rev: 4096
+  centre_tick: 2048
+  sign:
+    FL:
+      hip: 1
+      thigh: 1
+      calf: 1
+    FR:
+      hip: 1
+      thigh: -1
+      calf: -1
+    RL:
+      hip: -1
+      thigh: 1
+      calf: 1
+    RR:
+      hip: -1
+      thigh: -1
+      calf: -1
+  offset_tick:
+    FL:
+      hip: 0
+      thigh: 0
+      calf: 0
+    FR:
+      hip: 0
+      thigh: 0
+      calf: 0
+    RL:
+      hip: 0
+      thigh: 0
+      calf: 0
+    RR:
+      hip: 0
+      thigh: 0
+      calf: 0
+  zero_reference:
+    owner: servo_homing_offset
+    verify_on_start: true
+  expected_homing_offset_tick:
+    FL:
+      hip: 0
+      thigh: 0
+      calf: 0
+    FR:
+      hip: 0
+      thigh: -122
+      calf: 0
+    RL:
+      hip: 0
+      thigh: 0
+      calf: 0
+    RR:
+      hip: 0
+      thigh: 0
+      calf: 0
+  note: tick = centre_tick + sign * (q_urdf / (2*pi)) * 4096 + offset_tick. The knee
+    four-bar is an exact parallelogram, so the knee servo angle equals the shank angle
+    relative to the thigh, 1:1, no extra coupling term.
+mesh_bake:
+  base:
+  - stl: body_coarse.stl
+    R:
+    - - 0.9999999999999991
+      - -1.6757428777935957e-15
+      - -1.0066988655968123e-15
+    - - -8.942442660168065e-16
+      - 3.0553062494479467e-15
+      - -1.0000000000000007
+    - - 1.2594092435591608e-15
+      - 0.9999999999999996
+      - 3.1384235428685345e-15
+    t:
+    - 0.0028519013235317916
+    - -5.650071521756672e-11
+    - 0.01996633922217403
+  hip_fl:
+  - stl: hip_front_coarse.stl
+    R:
+    - - 0.9999560546545947
+      - 9.131800345253317e-15
+      - 0.009374900512397144
+    - - -9.08434623970499e-15
+      - 1.0000000000000009
+      - -4.800465472939243e-15
+    - - -0.009374900512397154
+      - 4.949943543421898e-15
+      - 0.999956054654596
+    t:
+    - -0.07254649243265197
+    - 0.10209126017260042
+    - -0.01991110404906266
+  thigh_left:
+  - stl: thigh_left_coarse.stl
+    R:
+    - - 9.095608165976752e-15
+      - 0.9999999999999999
+      - 2.386979502944045e-15
+    - - 1.0
+      - -9.095608165976769e-15
+      - 8.117558802292017e-15
+    - - 8.117558802292034e-15
+      - 2.386979502944126e-15
+      - -0.9999999999999999
+    t:
+    - -0.02507038896070853
+    - 0.04787948425281984
+    - 0.062043086843599604
+  - stl: crank_coarse.stl
+    R:
+    - - 0.9772005821768758
+      - 0.212318209754081
+      - -1.5456130565726594e-14
+    - - -1.4361547563347112e-14
+      - -6.6975787310416385e-15
+      - -1.0
+    - - -0.212318209754081
+      - 0.9772005821768758
+      - -3.5321201804086704e-15
+    t:
+    - -0.006983556142899641
+    - 0.007043537702779421
+    - 0.020358349271487167
+  - stl: rod_coarse.stl
+    R:
+    - - 1.0000000000000004
+      - 1.0143932477631565e-14
+      - -1.9345810780168464e-13
+    - - -1.9345810780168466e-13
+      - -1.0787244957713882e-14
+      - -1.0
+    - - -1.0143932477638111e-14
+      - 1.0000000000000004
+      - -1.0787244957711898e-14
+    t:
+    - -0.0368762506252045
+    - 0.02248308432647988
+    - 0.015643684212347984
+  calf_left:
+  - stl: calf_left_coarse.stl
+    R:
+    - - 0.9772006445311316
+      - 0.21231792276663983
+      - 5.2174246806111576e-15
+    - - 4.258267887084486e-15
+      - 4.974815799827213e-15
+      - -1.0
+    - - -0.21231792276663983
+      - 0.9772006445311316
+      - 3.957286613645144e-15
+    t:
+    - -0.024136225428884876
+    - -0.016317717293872942
+    - -0.12436740127790925
+  hip_fr:
+  - stl: hip_front_coarse.stl
+    R:
+    - - 0.9999560546545946
+      - -4.436769324769268e-15
+      - 0.00937490051239945
+    - - -4.455724433409053e-15
+      - -0.9999999999999998
+      - 1.7945954574650425e-15
+    - - 0.009374900512399448
+      - -1.5728159515409728e-15
+      - -0.9999560546545947
+    t:
+    - -0.07254649243265357
+    - -0.10209126017259991
+    - 0.019911104049064356
+  thigh_right:
+  - stl: thigh_right_coarse.stl
+    R:
+    - - 4.62390389419574e-15
+      - 0.9999999999999962
+      - 9.168591811694495e-15
+    - - 0.9999999999999998
+      - -5.512982860342258e-15
+      - 4.597365852776798e-15
+    - - 5.400359881857849e-15
+      - 8.322046755417785e-15
+      - -0.999999999999995
+    t:
+    - -0.10907331504004895
+    - 0.0699028494318946
+    - -0.04612456102384727
+  - stl: crank_coarse.stl
+    R:
+    - - -0.9772005821768711
+      - -0.21231820975410665
+      - -6.3337397518329864e-15
+    - - -4.499073099993947e-15
+      - -8.366625749442798e-15
+      - 1.0000000000000018
+    - - -0.21231820975410626
+      - 0.9772005821768702
+      - 7.737596878875109e-15
+    t:
+    - 0.006983556142900902
+    - -0.007043537702780061
+    - 0.020358349271486657
+  - stl: rod_coarse.stl
+    R:
+    - - 0.9999999999999971
+      - 4.018715185189013e-15
+      - -6.757186926758775e-14
+    - - -6.782063005988369e-14
+      - 1.0901970396356641e-14
+      - -0.9999999999999998
+    - - -4.573826697501748e-15
+      - 0.9999999999999966
+      - 1.124382789842825e-14
+    t:
+    - -0.03687625062520706
+    - 0.004833084326461115
+    - 0.015643684212346794
+  calf_right:
+  - stl: calf_right_coarse.stl
+    R:
+    - - 0.97720064453112
+      - 0.21231792276670164
+      - 1.2650048879067152e-14
+    - - 1.1367375855011156e-14
+      - 5.752651771805848e-15
+      - -1.0000000000000009
+    - - -0.21231792276670264
+      - 0.9772006445311192
+      - 3.6923460225769175e-15
+    t:
+    - -0.09334819000804326
+    - 0.052750972494725656
+    - -0.03702546984256043
+  hip_rl:
+  - stl: hip_front_coarse.stl
+    R:
+    - - -0.9999560546545945
+      - -3.657436118172067e-14
+      - -0.009374900512396101
+    - - -3.696028178131308e-14
+      - 1.0000000000000016
+      - 4.109573058653735e-14
+    - - 0.009374900512396124
+      - 4.165186713910934e-14
+      - -0.9999560546545958
+    t:
+    - 0.07254649243264981
+    - 0.10209126017260031
+    - 0.019911104049068748
+  hip_rr:
+  - stl: hip_front_coarse.stl
+    R:
+    - - -0.9999560546545946
+      - -2.54821835364312e-14
+      - -0.00937490051239955
+    - - 2.535337978485589e-14
+      - -0.9999999999999981
+      - 1.3451035051754032e-14
+    - - -0.009374900512399528
+      - 1.2952601954447337e-14
+      - 0.9999560546545935
+    t:
+    - 0.07254649243265127
+    - -0.10209126017260133
+    - -0.01991110404906209

@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.ipt binary
+*.iam binary
+*.ipj binary
+*.stl binary
+*.png binary
+*.step -text -diff linguist-generated
+*.usda -diff linguist-generated
