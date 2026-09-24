@@ -54,6 +54,9 @@ position setpoints.
   |yaw rate| ≤ 1.8 rad/s. Speeds validated on hardware are lower. Start slow.
 - **Physics:** the simulated actuator, IMU and friction models it was trained against are described in
   the JSON (`physics_contract`, `imu_contract`). The training environment code is not included.
+- **Torque limit:** training used a PWM/voltage torque model with an effort limit of 0.549 N·m
+  (`physics_contract.effort_limit_nm`). That is stricter than the 0.6405 N·m on the URDF joints, which
+  is the plain rigid-body description.
 
 ## Safety
 
