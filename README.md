@@ -11,7 +11,8 @@ This repository contains the complete mechanical design and the simulation descr
 - per-link visual meshes;
 - a URDF with measured masses and joint limits;
 - a flattened USD for Isaac Sim / Isaac Lab;
-- the scripts that regenerate the URDF from the CAD data.
+- the scripts that regenerate the URDF from the CAD data;
+- the trained walking policy that runs on the robot (`policy/`).
 
 [한국어 요약](README.ko.md)
 
@@ -48,6 +49,7 @@ cad/inventor/              Autodesk Inventor 2027 source (assembly + parts)
 tools/                     generate_urdf.py, derive_params.py, bake_meshes.py, stl_io.py
 docs/specs.md              coordinate frames, dimensions, mass budget, knee linkage, servo zero/sign
 docs/body_cover.md         the body cover, which is in the Inventor source but not in the URDF
+policy/                    trained walking policy (RSL-RL checkpoint) and its deployment contract
 ```
 
 **Which version is which.**
@@ -162,14 +164,16 @@ python tools/bake_meshes.py --raw <dir with raw Inventor STL exports>   # -> mes
 ## Not included
 
 - The actuator model: friction, torque–speed curve, transport delay.
-- Controller gains, the observation/action contract, and trained policies.
+- The training environment code. The walking policy and its observation/action contract are in
+  `policy/`.
 - IMU placement and calibration. Servo signs and IDs are in `docs/specs.md` §4. The homing offsets
   in `params/robot_params.yaml → hardware` belong to the author's unit; yours will differ.
 - Bill of materials (coming soon), printing and assembly instructions.
 
 ## License
 
-- **Hardware and documentation** (CAD, STEP, STL, URDF, USD, params, docs) are licensed under
+- **Hardware, documentation and the policy weights** (CAD, STEP, STL, URDF, USD, params, docs,
+  policy) are licensed under
   **CC BY-NC-SA 4.0** — see [LICENSE](LICENSE).
 - **Scripts in `tools/`** are licensed under **GPL-3.0-or-later** — see
   [LICENSE-SOFTWARE](LICENSE-SOFTWARE).

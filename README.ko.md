@@ -34,6 +34,10 @@
 - Inventor 2027 교육용으로 만든 파일이라 교육용 표시가 붙어 있다.
 - Raspberry Pi Zero 2 W 모델은 제3자 모델이라 빠져 있다. 따로 받아서 `몸/시스템/Raspberry Pi Zero 2 W.ipt`로 저장하면 조립이 복원된다.
 
+**보행 정책**
+- `policy/micro_dog_walk.pt`는 실기 게임패드 A 버튼에서 도는 보행 정책이다.
+- 관측·행동 규격은 `policy/README.md`와 `policy/micro_dog_walk.json`에 있다.
+
 **BOM(부품 목록)**
 - 추후 업데이트 예정이다. 전자부품, 베어링, 체결류, 인쇄 부품 수량, 필라멘트 사용량을 담는다.
 

@@ -6,3 +6,4 @@
 *.png binary
 *.step -text -diff linguist-generated
 *.usda -diff linguist-generated
+*.pt binary

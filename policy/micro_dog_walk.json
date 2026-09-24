@@ -1,0 +1,194 @@
+{
+ "checkpoint": "micro_dog_walk.pt",
+ "iteration": 30000,
+ "task": "TurnFixProgressResponseImu (internal Isaac Lab training task, not included)",
+ "joint_names": [
+  "FL_hip_joint",
+  "FR_hip_joint",
+  "RL_hip_joint",
+  "RR_hip_joint",
+  "FL_thigh_joint",
+  "FR_thigh_joint",
+  "RL_thigh_joint",
+  "RR_thigh_joint",
+  "FL_calf_joint",
+  "FR_calf_joint",
+  "RL_calf_joint",
+  "RR_calf_joint"
+ ],
+ "observation_terms": [
+  {
+   "name": "base_ang_vel",
+   "width": 3
+  },
+  {
+   "name": "projected_gravity",
+   "width": 3
+  },
+  {
+   "name": "velocity_commands",
+   "width": 3
+  },
+  {
+   "name": "joint_pos",
+   "width": 12
+  },
+  {
+   "name": "joint_vel",
+   "width": 12
+  },
+  {
+   "name": "actions",
+   "width": 12
+  }
+ ],
+ "observation_dim": 45,
+ "action_dim": 12,
+ "num_layers": 4,
+ "activation": "elu",
+ "observation_scaling": "none - every term is raw SI",
+ "action_formula": "target = clip(raw_action * action_scale + default_joint_pos)",
+ "output_transform": {
+  "kind": "identity"
+ },
+ "control_hz": 50.0,
+ "step_dt": 0.02,
+ "default_joint_pos": [
+  0.09792492538690567,
+  -0.10205576568841934,
+  0.09792492538690567,
+  -0.10205576568841934,
+  -0.8833666443824768,
+  -0.8858121037483215,
+  -0.8833666443824768,
+  -0.8858121037483215,
+  0.4447684586048126,
+  0.44925951957702637,
+  0.4447684586048126,
+  0.44925951957702637
+ ],
+ "action_scale": [
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25,
+  0.25
+ ],
+ "clip_low": [
+  -1.46819007396698,
+  -0.7732967734336853,
+  -1.46819007396698,
+  -0.7732967734336853,
+  -1.4405784606933594,
+  -1.4405784606933594,
+  -1.4405784606933594,
+  -1.4405784606933594,
+  -1.014131784439087,
+  -1.014131784439087,
+  -1.014131784439087,
+  -1.014131784439087
+ ],
+ "clip_high": [
+  0.7732967734336853,
+  1.46819007396698,
+  0.7732967734336853,
+  1.46819007396698,
+  0.7717627882957458,
+  0.7717627882957458,
+  0.7717627882957458,
+  0.7717627882957458,
+  1.1199764013290405,
+  1.1199764013290405,
+  1.1199764013290405,
+  1.1199764013290405
+ ],
+ "verified_max_abs_error": 2.3465458951932305e-05,
+ "physics_contract": {
+  "articulation": "BamEnabledArticulation (internal, not included)",
+  "friction_mode": "bam_parity",
+  "stopping_torque_mode": "physical",
+  "torque_limit_mode": "pwm",
+  "hardware_operating_mode": "position",
+  "hardware_current_limit_register_enforced": false,
+  "hardware_1500ma_role": "safety_shutdown_watchdog",
+  "simulated_current_plateau_enforced": false,
+  "effort_limit_nm": 0.54902,
+  "nominal_stall_torque_nm": 0.963402,
+  "position_reference_profile": {
+   "kind": "rectangular_velocity_based_pa0",
+   "velocity_rad_s": 20.215834566584956,
+   "physics_dt_s": 0.005,
+   "hardware_profile_velocity": 843,
+   "hardware_profile_acceleration": 0,
+   "runtime_application": "servo_firmware_only_no_host_profile"
+  },
+  "motor_response": {
+   "version": "contact-response-v1",
+   "kt_nm_per_a": 0.36601349688984386,
+   "resistance_ohm": 2.8113923539223227,
+   "damping_nm_s_per_rad": 0.047651079266338915,
+   "damping_source": "BAM xl330 m6 kt^2/R; not fitted to these traces",
+   "bam_friction_parameter_source": "runtime",
+   "electrical_damping_separate_from_bam_viscous_friction": true,
+   "hardware_pid_registers_changed": false
+  },
+  "solver_joint_friction": {
+   "version": "bam-solver-friction-randomized-v1",
+   "legacy_joint_friction_coefficient": "nominal USD value, randomized per env and joint",
+   "scale_range": [
+    0.8,
+    1.2
+   ],
+   "mechanical_friction": "BAM budget plus this solver channel"
+  }
+ },
+ "imu_contract": {
+  "version": "bmi088-complementary-v1",
+  "source": "PhysX specific force and gyro",
+  "physics_period_s": 0.005,
+  "filter_period_s": 0.02,
+  "integration_dt": "fixed policy period, matching archived runtime",
+  "alpha_range": [
+   0.01,
+   0.01
+  ],
+  "acceleration_reject_g": 0.5,
+  "gravity_magnitude_m_s2": 9.81,
+  "initialization": "first valid accelerometer sample",
+  "gyro_and_gravity": "same policy-rate sample, held between updates",
+  "frame": "calibrated body XYZ; residual mount rotation applied once",
+  "sensor_offset_m": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "sensor_offset_quaternion": [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ],
+  "position_assumption": "existing body prim origin; actual chip position unmeasured",
+  "unmodeled": [
+   "sensor internal filter",
+   "I2C delay",
+   "temperature drift"
+  ]
+ },
+ "checkpoint_sha256": "5393e638f47f4431dcdc5152453b9a4cd8146e1e0b5b4de6b0e4fb73c65bd927",
+ "observation_notes": {
+  "base_ang_vel": "IMU gyro, body frame, rad/s",
+  "projected_gravity": "gravity unit vector in body frame (complementary filter, see imu_contract)",
+  "velocity_commands": "[vx m/s, vy m/s, yaw rate rad/s]",
+  "joint_pos": "joint angle minus default_joint_pos, rad, in joint_names order",
+  "joint_vel": "joint velocity, rad/s, in joint_names order",
+  "actions": "previous raw policy output (before scale/offset/clip)"
+ }
+}
