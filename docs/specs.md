@@ -51,6 +51,11 @@ intersect. The only `hip_joint → thigh_joint` offset is therefore the 39.8 mm 
 - Each link's inertia tensor is scaled by the same ratio.
 - A point mass at the COM would leave the inertia unchanged and under-state leg swing inertia.
 
+**Material density.** CAD part masses use Inventor's ABS density (1.06 g/cm³), except where a
+mass is overridden (the thigh shell is fixed at 22.0 g). The printed frame is PLA
+(about 1.24 g/cm³). The weighed total of 960 g is exact. The split between links still assumes ABS
+density for the printed parts.
+
 Inertia tensors come from Inventor `MassProperties`: about the COM, in assembly axes, converted
 from kg·cm² to kg·m². The sign and order convention was checked against the principal moments.
 

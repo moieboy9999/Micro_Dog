@@ -6,9 +6,10 @@ part of the simulation model.**
 
 | Property | Value |
 |---|---|
-| Material | ABS |
+| Material in CAD | ABS (1.06 g/cm³) |
 | Volume | 40.9 cm³ |
 | CAD mass (solid ABS density) | 43.4 g |
+| Solid mass if printed in PLA (1.24 g/cm³) | ~50.8 g |
 
 - **How much it weighs is not settled.** The CAD value above assumes a fully solid part. A printed
   cover weighs less, depending on infill and wall settings, so weigh your own print.
